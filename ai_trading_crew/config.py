@@ -5,6 +5,9 @@ from pydantic import Field, field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 from crewai import LLM
 from datetime import datetime, timedelta
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 # Suppress Pydantic v2 deprecation warnings from dependencies
@@ -18,7 +21,9 @@ warnings.filterwarnings(
 # Valid LLM providers
 VALID_PROVIDERS = ["OPENROUTER"]
 
-BASE_SYMBOLS = ["AAPL", "NVDA", "MSFT", "AMZN", "GLD", "GOOGL", "TSLA"]
+#BASE_SYMBOLS = ["AAPL", "NVDA", "MSFT", "AMZN", "GLD", "GOOGL", "TSLA"]
+
+BASE_SYMBOLS = ["AAPL", "NVDA", "MSFT"]
 
 # top_30_us = [
 #     "MSFT", "NVDA", "AAPL", "AMZN", "GOOGL", "META", "TSLA", "AVGO", "BRK.B", "TSM",
@@ -133,7 +138,7 @@ def create_default_llm(api: str, model: str, url: str) -> LLM:
 def extract_provider_name(model_name: str) -> str:
     """
     Extract provider name from model name string.
-    Example: "OPENROUTER_GEMINI_2.5" -> "OPENROUTER"
+    Example: "OPENROUTER_LLAMA_4" -> "OPENROUTER"
     
     Raises ValueError if provider is not valid.
     """
@@ -144,12 +149,12 @@ def extract_provider_name(model_name: str) -> str:
     raise ValueError(f"Model name '{model_name}' does not start with a valid provider: {', '.join(VALID_PROVIDERS)}")
 
 
-#OpenRouter DeepSeek R1 is used for all LLM operations in the system
+# OpenRouter Llama 4 Maverick is used for all LLM operations in the system
 
-DEFAULT_PROJECT_LLM = "OPENROUTER_DEEPSEEK_R1"
-DEFAULT_STOCKTWITS_LLM = create_default_llm("OPENROUTER_API_KEY", "OPENROUTER_DEEPSEEK_R1", "OPENROUTER_BASE_URL")
-DEFAULT_TI_LLM = create_default_llm("OPENROUTER_API_KEY", "OPENROUTER_DEEPSEEK_R1", "OPENROUTER_BASE_URL")
-DEEPSEEK_OPENROUTER_LLM = create_default_llm("OPENROUTER_API_KEY", "OPENROUTER_DEEPSEEK_R1", "OPENROUTER_BASE_URL")
+DEFAULT_PROJECT_LLM = "OPENROUTER_LLAMA_4"
+DEFAULT_STOCKTWITS_LLM = create_default_llm("OPENROUTER_API_KEY", "OPENROUTER_LLAMA_4", "OPENROUTER_BASE_URL")
+DEFAULT_TI_LLM = create_default_llm("OPENROUTER_API_KEY", "OPENROUTER_LLAMA_4", "OPENROUTER_BASE_URL")
+LLAMA_OPENROUTER_LLM = create_default_llm("OPENROUTER_API_KEY", "OPENROUTER_LLAMA_4", "OPENROUTER_BASE_URL")
 
 
 OUTPUT_FOLDER  = "output"

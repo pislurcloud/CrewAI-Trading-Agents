@@ -125,3 +125,6 @@ def run_fast():
     Run the crew using async for maximum performance.
     """
     asyncio.run(run_async())
+
+if __name__ == "__main__":
+    run()
