@@ -30,7 +30,7 @@ This AI trading crew automates the entire daily stock research process using a t
 
 ### 🚀 Want to See This System in Action?
 
-For a deep dive into how this AI agent system works in practice and to see a real-world example of the analysis in action, check out my detailed [hands-on demonstration and implementation guide](https://ostiguyphilippe.medium.com/d53bbc54075f). This article walks through the complete process and shows you exactly how the AI agents collaborate to generate trading insights.
+For a deep dive into how this AI agent system works in practice and to see a real-world example of the analysis in action, check out the detailed [hands-on demonstration and implementation guide](https://ostiguyphilippe.medium.com/d53bbc54075f). This article walks through the complete process and shows you exactly how the AI agents collaborate to generate trading insights.
 
 
 ---
@@ -183,6 +183,7 @@ This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENS
 ## 💡 Liked this project? Show your support!
 
 ⭐ **Give the project a star**  
-🤝 **Send me a [LinkedIn](https://www.linkedin.com/in/philippe-ostiguy/) connection request to stay in touch**
+
 
 Happy automation! 🚀📈 
+
